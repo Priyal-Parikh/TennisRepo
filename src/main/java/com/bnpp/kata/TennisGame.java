@@ -20,13 +20,32 @@ public class TennisGame
 
     public String getScore()
     {
-        return convertToReadableScore(playerOneScore)+" All";
+        if(playerOneScore==playerTwoScore){
+            return convertToReadableScore(playerOneScore)+" All";
+        }
+
+        return convertToReadableScore(playerOneScore)+","+convertToReadableScore(playerTwoScore);
     }
 
     private String convertToReadableScore(int numericScore) {
-        return "Love";
+        switch(numericScore)
+        {
+            case ZERO:
+                return "Love";
+            case 1:
+                return "Fifteen";
+            case 2:
+                return "Thirty";
+            case 3:
+                return "Forty";
+            default:
+                throw new IllegalArgumentException("Incorrect score "+numericScore);
+        }
     }
 
+    public void playerOneScores() {
+        this.playerOneScore++;
+    }
 
     /* getters */
 

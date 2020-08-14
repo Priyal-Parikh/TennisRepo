@@ -40,4 +40,14 @@ public class TennisGameTest
 
         assertEquals("Love All", score);
     }
+
+    @Test
+    public void testPlayerOneScoresFirstBall()
+    {
+        tennisGame.playerOneScores();
+
+        score = tennisGame.getScore();
+
+        assertEquals("Fifteen,Love", score);
+    }
 }
