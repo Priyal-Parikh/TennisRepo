@@ -1,5 +1,7 @@
 package com.bnpp.kata;
 
+import com.bnpp.kata.exception.TennisException;
+
 public class TennisGame
 {
 
@@ -25,6 +27,10 @@ public class TennisGame
 
     public String getScore()
     {
+        if(!validScore()) {
+            throw new TennisException("Incorrect Score");
+        }
+
         if (hasWinner()) {
             return playerWithHigherScore()+" wins";
         }
@@ -59,7 +65,7 @@ public class TennisGame
             case THREE_BALLS_SCORED:
                 return "Forty";
             default:
-                throw new IllegalArgumentException("Incorrect score "+numericScore);
+                throw new TennisException("Incorrect Score");
         }
     }
 
@@ -76,6 +82,14 @@ public class TennisGame
             return true;
         else return playerOneScore >= FOUR && playerOneScore >= playerTwoScore + TWO;
     }
+
+    private boolean validScore() {
+        if(playerOneScore<NO_BALL_SCORED || playerTwoScore<NO_BALL_SCORED) {
+            return false;
+        }
+        return playerTwoScore < FOUR || playerOneScore < FOUR || playerTwoScore - playerOneScore <= 1;
+    }
+
     /* getters */
 
     public String getPlayerOne() {
