@@ -50,6 +50,9 @@ public class TennisGame
         this.playerOneScore++;
     }
 
+    public void playerTwoScores() {
+        this.playerTwoScore++;
+    }
     /* getters */
 
     public String getPlayerOne() {
