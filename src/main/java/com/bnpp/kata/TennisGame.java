@@ -1,9 +1,11 @@
 package com.bnpp.kata;
 
 import com.bnpp.kata.exception.TennisException;
+import org.apache.log4j.Logger;
 
 public class TennisGame
 {
+    private final Logger  lOGGERs= Logger.getLogger(TennisGame.class);
 
     public static final int NO_BALL_SCORED = 0;
     public static final int ONE_BALL_SCORED = 1;
@@ -28,6 +30,7 @@ public class TennisGame
     public String getScore()
     {
         if(!validScore()) {
+            lOGGERs.warn("Read the Message below and try with correct score.");
             throw new TennisException("Incorrect Score");
         }
 
