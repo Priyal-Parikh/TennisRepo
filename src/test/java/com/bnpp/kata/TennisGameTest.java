@@ -11,6 +11,7 @@ public class TennisGameTest
     public static final String firstPlayer = "Serena Williams";
     public static final String secondPlayer = "Maria Sharapova";
     TennisGame tennisGame;
+    String score;
 
     @Before
     public void setUp() {
@@ -35,7 +36,7 @@ public class TennisGameTest
     @Test
     public void testNewGameShouldReturnLoveAll()
     {
-        String score = tennisGame.getScore();
+        score = tennisGame.getScore();
 
         assertEquals("Love All", score);
     }
