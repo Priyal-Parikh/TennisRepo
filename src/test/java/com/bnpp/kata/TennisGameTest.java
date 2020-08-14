@@ -1,5 +1,6 @@
 package com.bnpp.kata;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -7,10 +8,19 @@ import static org.junit.Assert.assertNotNull;
 
 public class TennisGameTest
 {
-    @Test
-    public void testNewGameShouldNotReturnNullObject() {
+    public static final String firstPlayer = "Serena Williams";
+    public static final String secondPlayer = "Maria Sharapova";
+    TennisGame tennisGame;
 
-        TennisGame tennisGame=new TennisGame("Serena Williams", "Maria Sharapova");
+    @Before
+    public void setUp() {
+        tennisGame= new TennisGame(firstPlayer, secondPlayer);
+    }
+
+
+    @Test
+    public void testNewGameShouldNotReturnNullObject()
+    {
 
         assertNotNull(tennisGame);
     }
@@ -18,9 +28,7 @@ public class TennisGameTest
     @Test
     public void testNewGameShouldReturnPlayerNames()
     {
-        TennisGame tennisGame=new TennisGame("Serena Williams","Maria Sharapova");
-
-        assertEquals( "Serena Williams", tennisGame.getPlayerOne() );
-        assertEquals( "Maria Sharapova",tennisGame.getPlayerTwo() );
+        assertEquals(firstPlayer, tennisGame.getPlayerOne() );
+        assertEquals(secondPlayer,tennisGame.getPlayerTwo() );
     }
 }

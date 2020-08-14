@@ -11,7 +11,8 @@ public class TennisGame
         this.playerTwo=playerTwoName;
     }
 
-    //getters
+
+    /* getters */
 
     public String getPlayerOne() {
         return playerOne;
