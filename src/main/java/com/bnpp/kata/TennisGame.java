@@ -23,6 +23,17 @@ public class TennisGame
 
     public String getScore()
     {
+        if (hasWinner()) {
+            if(playerOneScore>playerTwoScore)
+            {
+                return playerOne+" wins";
+            }
+            else
+            {
+                return playerTwo+" wins";
+            }
+        }
+
         if(playerOneScore==playerTwoScore){
             return convertToReadableScore(playerOneScore)+" All";
         }
@@ -52,6 +63,12 @@ public class TennisGame
 
     public void playerTwoScores() {
         this.playerTwoScore++;
+    }
+
+    private boolean hasWinner() {
+        if(playerTwoScore >= 4 && playerTwoScore >= playerOneScore + 2 )
+            return true;
+        else return playerOneScore >= 4 && playerOneScore >= playerTwoScore + 2;
     }
     /* getters */
 
