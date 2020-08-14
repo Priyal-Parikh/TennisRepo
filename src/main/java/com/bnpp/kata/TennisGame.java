@@ -7,6 +7,8 @@ public class TennisGame
     public static final int ONE_BALL_SCORED = 1;
     public static final int TWO_BALLS_SCORED = 2;
     public static final int THREE_BALLS_SCORED = 3;
+    public static final int FOUR = 4;
+    public static final int TWO = 2;
     private final String playerOne;
     private final String playerTwo;
     private int playerTwoScore;
@@ -66,9 +68,9 @@ public class TennisGame
     }
 
     private boolean hasWinner() {
-        if(playerTwoScore >= 4 && playerTwoScore >= playerOneScore + 2 )
+        if(playerTwoScore >= FOUR && playerTwoScore >= playerOneScore + TWO)
             return true;
-        else return playerOneScore >= 4 && playerOneScore >= playerTwoScore + 2;
+        else return playerOneScore >= FOUR && playerOneScore >= playerTwoScore + TWO;
     }
     /* getters */
 
