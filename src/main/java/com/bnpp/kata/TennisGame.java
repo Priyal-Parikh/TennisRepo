@@ -37,6 +37,9 @@ public class TennisGame
 
         if(isDeuce()) return "Deuce";
 
+        if (hasAdvantage())  return "Advantage " + playerWithHigherScore();
+
+
         if(playerOneScore==playerTwoScore){
             return convertToReadableScore(playerOneScore)+" All";
         }
@@ -94,6 +97,12 @@ public class TennisGame
 
     private boolean isDeuce() {
         return playerOneScore >= THREE_BALLS_SCORED && playerTwoScore == playerOneScore;
+    }
+
+    private boolean hasAdvantage() {
+        if (playerTwoScore >= FOUR && playerTwoScore == playerOneScore + ONE_BALL_SCORED)
+            return true;
+        return playerOneScore >= FOUR && playerOneScore == playerTwoScore + ONE_BALL_SCORED;
     }
 
     /* getters */
