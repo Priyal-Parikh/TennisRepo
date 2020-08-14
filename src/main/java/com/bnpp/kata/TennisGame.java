@@ -6,17 +6,21 @@ public class TennisGame
     public static final int ZERO = 0;
     private final String playerOne;
     private final String playerTwo;
+    private int playerTwoScore;
     private int playerOneScore;
 
 
     public TennisGame(String playerOneName, String playerTwoName) {
         this.playerOne=playerOneName;
         this.playerTwo=playerTwoName;
+
+        this.playerOneScore=ZERO;
+        this.playerTwoScore=ZERO;
     }
 
     public String getScore()
     {
-        return convertToReadableScore(ZERO)+" All";
+        return convertToReadableScore(playerOneScore)+" All";
     }
 
     private String convertToReadableScore(int numericScore) {
