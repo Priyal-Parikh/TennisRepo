@@ -26,14 +26,7 @@ public class TennisGame
     public String getScore()
     {
         if (hasWinner()) {
-            if(playerOneScore>playerTwoScore)
-            {
-                return playerOne+" wins";
-            }
-            else
-            {
-                return playerTwo+" wins";
-            }
+            return playerWithHigherScore()+" wins";
         }
 
         if(playerOneScore==playerTwoScore){
@@ -41,6 +34,17 @@ public class TennisGame
         }
 
         return convertToReadableScore(playerOneScore)+","+convertToReadableScore(playerTwoScore);
+    }
+
+    private String playerWithHigherScore() {
+        if(playerOneScore>playerTwoScore)
+        {
+            return playerOne;
+        }
+        else
+        {
+            return playerTwo;
+        }
     }
 
     private String convertToReadableScore(int numericScore) {
