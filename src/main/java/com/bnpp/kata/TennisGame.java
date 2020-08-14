@@ -35,6 +35,8 @@ public class TennisGame
             return playerWithHigherScore()+" wins";
         }
 
+        if(isDeuce()) return "Deuce";
+
         if(playerOneScore==playerTwoScore){
             return convertToReadableScore(playerOneScore)+" All";
         }
@@ -84,10 +86,14 @@ public class TennisGame
     }
 
     private boolean validScore() {
-        if(playerOneScore<NO_BALL_SCORED || playerTwoScore<NO_BALL_SCORED) {
+        if(playerOneScore < NO_BALL_SCORED || playerTwoScore<NO_BALL_SCORED) {
             return false;
         }
         return playerTwoScore < FOUR || playerOneScore < FOUR || playerTwoScore - playerOneScore <= 1;
+    }
+
+    private boolean isDeuce() {
+        return playerOneScore >= THREE_BALLS_SCORED && playerTwoScore == playerOneScore;
     }
 
     /* getters */

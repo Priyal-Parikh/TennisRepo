@@ -118,6 +118,16 @@ public class TennisGameTest
         score = tennisGame.getScore();
     }
 
+    @Test
+    public void testPlayersAreDeuceAfterFirstFourScoredBalls(){
+
+        createScore(4, 4);
+
+        score = tennisGame.getScore();
+
+        assertEquals("Deuce", score);
+    }
+
     private void createScore(int playerOneBalls, int playerTwoBalls) {
         for(int i=0; i<playerOneBalls; i++) {
             tennisGame.playerOneScores();
