@@ -31,4 +31,12 @@ public class TennisGameTest
         assertEquals(firstPlayer, tennisGame.getPlayerOne() );
         assertEquals(secondPlayer,tennisGame.getPlayerTwo() );
     }
+
+    @Test
+    public void testNewGameShouldReturnLoveAll()
+    {
+        String score = tennisGame.getScore();
+
+        assertEquals("Love All", score);
+    }
 }

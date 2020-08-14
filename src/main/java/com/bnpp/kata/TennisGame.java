@@ -11,6 +11,9 @@ public class TennisGame
         this.playerTwo=playerTwoName;
     }
 
+    public String getScore() {
+        return "Love All";
+    }
 
     /* getters */
 
@@ -21,4 +24,5 @@ public class TennisGame
     public String getPlayerTwo() {
         return playerTwo;
     }
+
 }
