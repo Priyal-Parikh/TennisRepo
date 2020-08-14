@@ -3,7 +3,10 @@ package com.bnpp.kata;
 public class TennisGame
 {
 
-    public static final int ZERO = 0;
+    public static final int NO_BALL_SCORED = 0;
+    public static final int ONE_BALL_SCORED = 1;
+    public static final int TWO_BALLS_SCORED = 2;
+    public static final int THREE_BALLS_SCORED = 3;
     private final String playerOne;
     private final String playerTwo;
     private int playerTwoScore;
@@ -14,8 +17,8 @@ public class TennisGame
         this.playerOne=playerOneName;
         this.playerTwo=playerTwoName;
 
-        this.playerOneScore=ZERO;
-        this.playerTwoScore=ZERO;
+        this.playerOneScore= NO_BALL_SCORED;
+        this.playerTwoScore= NO_BALL_SCORED;
     }
 
     public String getScore()
@@ -30,13 +33,13 @@ public class TennisGame
     private String convertToReadableScore(int numericScore) {
         switch(numericScore)
         {
-            case ZERO:
+            case NO_BALL_SCORED:
                 return "Love";
-            case 1:
+            case ONE_BALL_SCORED:
                 return "Fifteen";
-            case 2:
+            case TWO_BALLS_SCORED:
                 return "Thirty";
-            case 3:
+            case THREE_BALLS_SCORED:
                 return "Forty";
             default:
                 throw new IllegalArgumentException("Incorrect score "+numericScore);
