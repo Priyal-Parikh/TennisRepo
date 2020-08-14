@@ -3,6 +3,7 @@ package com.bnpp.kata;
 public class TennisGame
 {
 
+    public static final int ZERO = 0;
     private final String playerOne;
     private final String playerTwo;
     private int playerOneScore;
@@ -15,7 +16,7 @@ public class TennisGame
 
     public String getScore()
     {
-        return convertToReadableScore(0)+" All";
+        return convertToReadableScore(ZERO)+" All";
     }
 
     private String convertToReadableScore(int numericScore) {
